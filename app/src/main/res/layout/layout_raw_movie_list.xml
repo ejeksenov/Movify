@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="8dp">
+    <ImageView
+            android:id="@+id/iv_raw_movie_image"
+            android:layout_width="100dp"
+            android:layout_height="150dp"
+            android:scaleType="centerCrop"/>
+    <TextView
+            android:id="@+id/tv_raw_movie_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@+id/iv_raw_movie_image"
+            android:text="Title"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"/>
+    <TextView
+            android:id="@+id/tv_raw_movie_release_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Release Date"
+            android:layout_toEndOf="@+id/iv_raw_movie_image"
+            android:layout_below="@+id/tv_raw_movie_title"
+            android:layout_margin="8dp"/>
+    <TextView
+            android:id="@+id/tv_raw_movie_vote_average"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Vote Average"
+            android:layout_toEndOf="@+id/iv_raw_movie_image"
+            android:layout_below="@+id/tv_raw_movie_release_date"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:drawableEnd="@drawable/ic_star_yellow"/>
+    <TextView
+            android:id="@+id/tv_raw_movie_overview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Overview"
+            android:ellipsize="end"
+            android:maxLines="3"
+            android:layout_toEndOf="@+id/iv_raw_movie_image"
+            android:layout_below="@+id/tv_raw_movie_vote_average"
+            android:layout_marginTop="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"/>
+</RelativeLayout>
