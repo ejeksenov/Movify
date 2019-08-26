@@ -2,7 +2,7 @@
 
 Demo app how to use Android Networking and incorporate modern libraries
 
-## Getting Started
+## Introduction
 
   This project will follow a ViewModel approach to handle the data synchronization by repository which executed asynchronously by Kotlin Coroutines
   ![](movify-demonstration.gif)
