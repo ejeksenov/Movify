@@ -1,4 +1,4 @@
-package kz.nextstep.movify.utils
+package kz.nextstep.movify.api
 
 sealed class Result<out T: Any> {
     data class Success<out T : Any>(val data: T) : Result<T>()

@@ -13,33 +13,12 @@ import kz.nextstep.movify.R
 
 class MainActivity : AppCompatActivity() {
 
-    private lateinit var tmdbViewModel: TmdbViewModel
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        tmdbViewModel = ViewModelProviders.of(this).get(TmdbViewModel::class.java)
-
-        tmdbViewModel.fetchMovies()
-
-        initRecyclerView()
-
-        tmdbViewModel.popularMoviesLiveData.observe(this, Observer {
-            val adapter = MovieAdapter(this, it)
-            rv_main_list.adapter = adapter
-        })
 
     }
 
-    private fun initRecyclerView() {
-        rv_main_list.layoutManager = LinearLayoutManager(this, RecyclerView.VERTICAL ,false)
-        rv_main_list.addItemDecoration(DividerItemDecoration(this, LinearLayout.VERTICAL))
-    }
-
-    override fun onDestroy() {
-        super.onDestroy()
-        tmdbViewModel.cancelAllRequests()
-    }
 }
 

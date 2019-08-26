@@ -11,4 +11,23 @@ class MovieRepository(private val api: TmdbApi): BaseRepository() {
 
         return movieResponse?.results?.toMutableList()
     }
+
+    suspend fun getTopRatedMovies() : MutableList<TmdbMovie>?{
+        val movieResponse = safeApiCall(
+            call = {api.getTopRatedMovie().await()},
+            errorMessage = "Error Fetching Top Rated Movies"
+        )
+
+        return movieResponse?.results?.toMutableList()
+    }
+
+
+    suspend fun getMovie(id: Int) : TmdbMovie?{
+        val movieResponse = safeApiCall(
+            call = {api.getMovie(id).await()},
+            errorMessage = "Error Fetching Current Movie by Id"
+        )
+
+        return movieResponse
+    }
 }

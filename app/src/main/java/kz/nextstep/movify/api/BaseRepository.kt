@@ -1,7 +1,6 @@
 package kz.nextstep.movify.api
 
 import android.util.Log
-import kz.nextstep.movify.utils.Result
 import retrofit2.Response
 import java.io.IOException
 
