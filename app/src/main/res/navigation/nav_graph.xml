@@ -4,11 +4,11 @@
             xmlns:tools="http://schemas.android.com/tools" android:id="@+id/nav_graph"
             app:startDestination="@id/movieListFragment">
 
-    <fragment android:id="@+id/movieListFragment" android:name="kz.nextstep.movify.ui.MovieListFragment"
+    <fragment android:id="@+id/movieListFragment" android:name="kz.nextstep.movify.ui.movies.MovieListFragment"
               android:label="fragment_movie_list" tools:layout="@layout/fragment_movie_list">
         <action android:id="@+id/action_movieListFragment_to_movieDetailedInfoFragment"
                 app:destination="@id/movieDetailedInfoFragment"/>
     </fragment>
-    <fragment android:id="@+id/movieDetailedInfoFragment" android:name="kz.nextstep.movify.ui.MovieDetailedInfoFragment"
+    <fragment android:id="@+id/movieDetailedInfoFragment" android:name="kz.nextstep.movify.ui.movieDetailedInfo.MovieDetailedInfoFragment"
               android:label="fragment_movie_detailed_info" tools:layout="@layout/fragment_movie_detailed_info"/>
 </navigation>

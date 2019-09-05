@@ -1,8 +1,11 @@
 package kz.nextstep.movify.api
 
 import kz.nextstep.movify.data.TmdbMovie
+import javax.inject.Inject
 
-class MovieRepository(private val api: TmdbApi): BaseRepository() {
+class MovieRepository(val api: TmdbApi): BaseRepository() {
+
+
     suspend fun getPopularMovies() : MutableList<TmdbMovie>?{
         val movieResponse = safeApiCall(
             call = {api.getPopularMovie().await()},
@@ -23,11 +26,10 @@ class MovieRepository(private val api: TmdbApi): BaseRepository() {
 
 
     suspend fun getMovie(id: Int) : TmdbMovie?{
-        val movieResponse = safeApiCall(
-            call = {api.getMovie(id).await()},
-            errorMessage = "Error Fetching Current Movie by Id"
-        )
 
-        return movieResponse
+        return safeApiCall(
+        call = { api.getMovie(id).await()},
+        errorMessage = "Error Fetching Current Movie by Id"
+    )
     }
 }
