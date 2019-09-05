@@ -1,5 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout
+        xmlns:android="http://schemas.android.com/apk/res/android">
+    <data>
+        <variable
+                name="viewModel"
+                type="kz.nextstep.movify.ui.movies.MovieViewModel" />
+    </data>
+<RelativeLayout
+        android:id="@+id/rl_raw_movie_layout"
                 android:orientation="vertical"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -8,13 +16,14 @@
             android:id="@+id/iv_raw_movie_image"
             android:layout_width="100dp"
             android:layout_height="150dp"
+            imageUrl="@{viewModel.getPosterPath()}"
             android:scaleType="centerCrop"/>
     <TextView
             android:id="@+id/tv_raw_movie_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_toEndOf="@+id/iv_raw_movie_image"
-            android:text="Title"
+            mutableText="@{viewModel.getTitle()}"
             android:textSize="20sp"
             android:textStyle="bold"
             android:layout_marginStart="8dp"
@@ -23,7 +32,7 @@
             android:id="@+id/tv_raw_movie_release_date"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Release Date"
+            mutableText="@{viewModel.getReleaseDate()}"
             android:layout_toEndOf="@+id/iv_raw_movie_image"
             android:layout_below="@+id/tv_raw_movie_title"
             android:layout_margin="8dp"/>
@@ -31,9 +40,9 @@
             android:id="@+id/tv_raw_movie_vote_average"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Vote Average"
             android:layout_toEndOf="@+id/iv_raw_movie_image"
             android:layout_below="@+id/tv_raw_movie_release_date"
+            mutableText="@{viewModel.getVoteAverage()}"
             android:layout_marginStart="8dp"
             android:layout_marginEnd="8dp"
             android:drawableEnd="@drawable/ic_star_yellow"/>
@@ -41,12 +50,13 @@
             android:id="@+id/tv_raw_movie_overview"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Overview"
             android:ellipsize="end"
             android:maxLines="3"
+            mutableText="@{viewModel.getOverview()}"
             android:layout_toEndOf="@+id/iv_raw_movie_image"
             android:layout_below="@+id/tv_raw_movie_vote_average"
             android:layout_marginTop="8dp"
             android:layout_marginStart="8dp"
             android:layout_marginEnd="8dp"/>
 </RelativeLayout>
+</layout>
