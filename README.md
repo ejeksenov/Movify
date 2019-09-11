@@ -17,44 +17,6 @@ Demo app how to use Android Networking and incorporate modern libraries
 * [Navigation Component](https://developer.android.com/guide/navigation/navigation-getting-started) -  A component that helps to navigate between fragments and activities 
 * [Dagger 2](https://github.com/google/dagger) - A fast dependency injector for Android and Java
 
-```
-    //Moshi
-    implementation "com.squareup.moshi:moshi-kotlin:$moshiVersion"
-    kapt "com.squareup.moshi:moshi-kotlin-codegen:$moshiVersion"
-
-    //Retrofit2
-    implementation "com.squareup.retrofit2:retrofit:$retrofit2_version"
-    implementation "com.squareup.retrofit2:converter-moshi:$retrofit2_version"
-    implementation "com.jakewharton.retrofit:retrofit2-kotlin-coroutines-adapter:0.9.2"
-
-    //Okhttp3
-    implementation "com.squareup.okhttp3:okhttp:$okhttp3_version"
-    implementation 'com.squareup.okhttp3:logging-interceptor:3.11.0'
-
-    //Picasso for Image Loading
-    implementation("com.squareup.picasso:picasso:$picassoVersion") {
-        exclude group: "com.android.support"
-    }
-
-    //Kotlin Coroutines
-    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$kotlinCoroutineVersion"
-    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:$kotlinCoroutineVersion"
-
-    implementation 'android.arch.lifecycle:extensions:1.1.1'
-
-    //ui
-    implementation 'androidx.recyclerview:recyclerview:1.1.0-beta03'
-    implementation 'androidx.cardview:cardview:1.0.0'
-
-    // Navigation Graph
-    implementation "androidx.navigation:navigation-fragment-ktx:$nav_version"
-    implementation "androidx.navigation:navigation-ui-ktx:$nav_version"
-    
-    // Dagger 2
-    implementation "com.google.dagger:dagger:$dagger2_version"
-    kapt "com.google.dagger:dagger-compiler:$dagger2_version"
-    compileOnly "org.glassfish:javax.annotation:3.1.1"
-```
 
 ### Api Reference
 You have to create and put your api key into local.properties in the root of the project
